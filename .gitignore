@@ -5,6 +5,5 @@ build/*
 *.iso
 *.bin
 *.tpj
-*.cnf
 *.xa
 *.mid
