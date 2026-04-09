@@ -122,6 +122,8 @@ uint32_t *engine_render_ot(int z_layer)
 void engine_renderer_set_theme(int theme_id)
 {
     engine_theme_set_active(theme_id);
+    /* Upload this theme's CLUT on demand — no pre-upload required in init */
+    vram_upload_clut(theme_id, g_engine_themes[theme_id].colors);
     s_clut = vram_get_clut_word(theme_id);
     sync_draw_env_bg();
 }
